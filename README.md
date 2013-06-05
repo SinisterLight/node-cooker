@@ -1,13 +1,10 @@
-node-cooker Cookbook
+node-cooker
 ====================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+Chef Cookbook for installation and deployment of node.js apps
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+TODO: List cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
 e.g.
 #### packages
@@ -15,7 +12,7 @@ e.g.
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
+TODO: List cookbook attributes here.
 
 e.g.
 #### node-cooker::default
@@ -53,9 +50,6 @@ Just include `node-cooker` in your node's `run_list`:
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write you change
