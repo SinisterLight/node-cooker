@@ -28,7 +28,7 @@ remote_file "/usr/local/src/#{node_tar}" do
 end
 
 script "install-node" do
-  user 'rood'
+  user 'root'
   interpreter "bash"
   cwd "/usr/local/src"
   code <<-EOH
