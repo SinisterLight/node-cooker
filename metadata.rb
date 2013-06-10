@@ -1,4 +1,4 @@
-name             'node-cooker'
+name             'node'
 maintainer       'Sinister Light'
 maintainer_email 'me@sinisterlight.com'
 license          'All rights reserved'
