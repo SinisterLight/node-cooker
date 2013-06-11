@@ -5,6 +5,39 @@
 # Copyright 2013, Sinister Light
 #
 
+#fix for chef-1699 open ticket
+ruby_block "reset group list" do
+  action :nothing
+  block do
+    Etc.endgrent
+  end
+  notifies :run, "execute[set node password]", :immediately
+end
+
+group "node" do
+  gid 1000
+  group_name 'node'
+  not_if "grep node /etc/group"
+end
+
+user "node" do
+  username 'node'
+  uid 1000
+  gid 1000
+  home "/opt/node"
+  shell "/bin/bash"
+  supports :manage_home => true 
+  notifies :create, resources(:ruby_block => "reset group list"), :immediately
+  not_if "grep node /etc/passwd"
+end
+
+execute "set node password" do
+  Chef::Log.info("Setting node password")
+  user 'root'
+  command "echo newnode | passwd node --stdin"
+  action :nothing
+end
+
 Chef::Log.info("Install ssl for #{node[:platform]}")
 case node[:platform]
   when "centos","redhat","fedora","rhel"
