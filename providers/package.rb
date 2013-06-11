@@ -1,12 +1,12 @@
 action :install do
-  execute "installing NPM package #{name}" do
-    command npm_execute(:uninstall, name, version)
+  execute "installing NPM package #{new_resource.name}" do
+    command npm_execute(:uninstall, new_resource.name, new_resource.version)
   end
 end
 
 action :uninstall do
-  execute "uninstalling NPM package #{name}" do
-    command npm_execute(:uninstall, name, version)
+  execute "uninstalling NPM package #{new_resource.name}" do
+    command npm_execute(:uninstall, new_resource.name, new_resource.version)
   end
 end
 
