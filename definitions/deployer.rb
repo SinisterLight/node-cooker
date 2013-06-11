@@ -12,4 +12,3 @@ define :app_deployer do
     end
   end
 end
-
