@@ -1,1 +1,3 @@
-node_package "forever"
+node_package "forever" do
+  action :install
+end
