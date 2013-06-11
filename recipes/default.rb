@@ -15,15 +15,15 @@ ruby_block "reset group list" do
 end
 
 group "node" do
-  gid 1000
+  gid 2000
   group_name 'node'
   not_if "grep node /etc/group"
 end
 
 user "node" do
   username 'node'
-  uid 1000
-  gid 1000
+  uid 2000
+  gid 2000
   home "/opt/node"
   shell "/bin/bash"
   supports :manage_home => true 
