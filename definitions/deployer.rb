@@ -11,4 +11,19 @@ define :app_deployer do
       File.exists? "#{node[:node][:home]}/apps"
     end
   end
+
+  template "#{node[:node][:home]}/apps/#{application_name}_deployer.sh" do
+    cookbook "node"
+    source "deployer.sh.erb"
+    owner "node"
+    group "node"
+    mode 0755
+    variables(
+      :application_name => application_name,
+      :application_main => params[:main],
+      :server => params[:server],
+      :port => params[:port],
+      :project_code => params[:project_code]
+    )
+  end
 end
