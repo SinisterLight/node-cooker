@@ -4,3 +4,4 @@ default[:node][:directory] = '/usr/local'
 default[:node][:npm] = '1.2.14'
 default[:node][:user_id] = 2000
 default[:node][:group_id] = 2000
+default[:node][:home] = '/opt/node'

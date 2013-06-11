@@ -24,7 +24,7 @@ user "node" do
   username 'node'
   uid node[:node][:user_id]
   gid node[:node][:group_id]
-  home "/opt/node"
+  home node[:node][:home]
   shell "/bin/bash"
   supports :manage_home => true 
   notifies :create, resources(:ruby_block => "reset group list"), :immediately
