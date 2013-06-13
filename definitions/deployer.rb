@@ -23,6 +23,8 @@ define :app_deployer do
       :application_main => params[:main],
       :server => params[:server],
       :port => params[:port],
+      :user => params[:user],
+      :password => params[:password],
       :project_code => params[:project_code]
     )
   end

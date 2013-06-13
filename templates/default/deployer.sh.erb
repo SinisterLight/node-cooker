@@ -1,9 +1,9 @@
 #!/bin/sh
 
 rm <%=@application_name%>-$1.zip
-wget http://admin:admin@<%=@server%>:<%=@port%>/httpAuth/repository/download/<%=@project_code%>/.lastSuccessful/<%=@application_name%>-$1.tar.gz
+wget http://<%=@user%>:<%=@password%>@<%=@server%>:<%=@port%>/httpAuth/repository/download/<%=@project_code%>/.lastSuccessful/<%=@application_name%>-$1.tar.gz
 
-forever stop /opt/node/apps/<%=@application_name%>/.<%=@application_main%>
+forever stop /opt/node/apps/<%=@application_name%>/<%=@application_main%>
 rm -r <%=@application_name%>
 
 tar -zxvf <%=@application_name%>-$1.tar.gz
