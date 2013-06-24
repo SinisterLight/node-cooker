@@ -46,6 +46,7 @@ case node[:platform]
   when "debian","ubuntu"
     package "libssl-dev"
 end
+package "make"
 
 node_file      = "node-v#{node[:node][:version]}"
 node_tar       = "#{node_file}.tar.gz"
